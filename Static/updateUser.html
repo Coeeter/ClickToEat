@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - ClickToEat</title>
+    <link rel="shortcut icon" href="images/favicon/Red Fork Restaurant Logo-modified.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+    <script src="js/updateUser.js" defer></script>
+    <script src="js/profilePhoto.js" defer></script>
+</head>
+<body>
+    <iframe name="dummyframe"></iframe>
+
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <a href="/" class="navbar-brand" style="font-size: 1.5rem;"><img src="images/favicon/Red Fork Restaurant Logo-modified.png" alt="" style="width: 75px;"> ClickToEat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#links" aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="links">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id = "profileDropdown" role = "button" data-toggle = "dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img width="75" height = "75" src="images/default-user.png" alt="" id="profilePhoto" style = "opacity: 0;">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                        <a href="Favorites" class="dropdown-item"><i class="bi bi-heart"></i> Your Favorites</a>
+                        <a href="#" class="dropdown-item"><i class="bi bi-gear"></i> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item" onclick="logout()"><i class="bi bi-box-arrow-in-right"></i> Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class = "dummySpace"></div>
+
+    <div class="container">
+        <div class="row border shadow bg-white rounded">
+            <div class="col-md-3 col-sm-12 m-0 p-0" style="background-color: rgba(238, 238, 238, 0.534);">
+                <div class="list-group d-md-block d-none" role="tablist">
+                    <a class="list-group-item list-group-item-action rounded-0 active" href="#">Edit Profile</a>
+                    <a class="list-group-item list-group-item-action rounded-0" href = "Settings/ResetPassword">Change Password</a>
+                    <a class="list-group-item list-group-item-action rounded-0" href="  Settings/DeleteAccount">Delete Account</a>
+                </div>
+                <div class="list-group d-md-none d-flex flex-row" role="tablist">
+                    <a class="list-group-item list-group-item-action rounded-0 active" href="#">Edit Profile</a>
+                    <a class="list-group-item list-group-item-action rounded-0" href = "Settings/ResetPassword">Change Password</a>
+                    <a class="list-group-item list-group-item-action rounded-0" href="Settings/DeleteAccount">Delete Account</a>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12 my-5 p-3">
+                <div class="row">
+                    <form action="/users" method="POST" enctype="multipart/form-data" class = "col-12" target = "dummyframe" id = "form">
+                        <div class="form-row">
+                            <div class="col-lg-9">
+                                <div class="form-group row">
+                                    <label for="username" class="col-form-label col-md-3">Username</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name = "username" id = "username" class="form-control" placeholder="Enter Username" required><br>
+                                    </div>
+                                </div>
+                        
+                                <div class="form-group row">
+                                    <label for="email" class="col-form-label col-md-3">Email</label>
+                                    <div class="col-md-9">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" required><br>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label for="phone" class="col-form-label col-md-3">Phone Number</label>
+                                    <div class="col-md-9">
+                                        <input type="tel" name="phoneNum" id="phone" class="form-control" placeholder="Enter Phone Number" required><br>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="address" class="col-form-label col-md-3">Address</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="address" id="address" class="form-control" placeholder="Enter Address" required><br>
+                                    </div>
+                                </div>
+                        
+                                <div class="form-group row">
+                                    <label for="firstName" class="col-form-label col-md-3">First Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Enter First Name" required><br>
+                                    </div>
+                                </div>
+                        
+                                <div class="form-group row">
+                                    <label for="lastName" class="col-form-label col-md-3">Last Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Enter Last Name" required><br>
+                                    </div>
+                                </div>
+                                
+                                <fieldset class="form-group">
+                                    <div class="row">
+                                        <legend class="col-form-label col-md-3 pt-0">Gender</legend>
+                                        <div class="col-md-9">
+                                            <div class="form-check">
+                                                <input type="radio" name="gender" id="Male" value = "M" class="form-check-input">
+                                                <label for="Male" class="form-check-label">Male</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="radio" name="gender" id="Female" class="form-check-input" value="F">
+                                                <label for="Female" class="form-check-label">Female</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="file" name = "uploadFile" id = "uploadFile" accept="image/*" class = "form-control-file" onchange="loadFile(event)" style="display:none;">
+                                <label for="uploadFile" class="col-form-label col-md-12 text-md-center p-0 p-sm-1">Profile Picture</label>
+                                <div class="d-flex justify-content-md-center" >
+                                    <label for="uploadFile" id = "outputLabel">
+                                        <img id = "output" width = "175" height = "175" src = "images/default-user.png">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="dummySpace"></div>
+        
+                        <div class="form-row">
+                            <div class="col-md-9 d-flex justify-content-end">
+                                <div class="col-md-9 px-lg-1 px-md-5 px-sm-0 px-0">
+                                    <button type="submit" class = "btn btn-secondary">Update Profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="dummySpace"></div>
+
+    </div>
+
+    <!--The modal shown when finished updating user-->
+    <div class="modal fade" id="updateUserModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title text-light" id = "updateUserModalTitle"></h5>
+                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+              
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

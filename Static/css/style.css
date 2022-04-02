@@ -1,0 +1,347 @@
+:root {
+    --bgcolor: #fa4614;
+    --darker: #e43d0f;
+    --evenDarker: #b63a18;
+    --disabled: #f3896c;
+    --maincolor: #041b3f;
+    --mainbg: #f4c95d;
+    --grayback: rgba(238, 238, 238, 0.534);
+}
+
+body {
+    background-color: rgba(238, 238, 238, 0.534);
+}
+iframe {
+    position: absolute;
+    transform: translateY(-120%);
+}
+
+label,
+input[type='radio'] {
+    cursor: pointer;
+}
+
+nav.navbar {
+    background-color: var(--maincolor);
+}
+
+.dummySpace {
+    height: 40px;
+}
+
+img#output,
+img#profilePhoto {
+    border-radius: 50%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+    background-color: #06275c;
+}
+
+@media only screen and (min-width: 768px) {
+    label.col-form-label,
+    legend {
+        text-align: end;
+    }
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: rgba(255, 255, 255, 0);
+}
+
+.card[item]:hover {
+    transform: scale(1.07);
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.bold .bi {
+    font-size: 1.1rem;
+}
+
+.image[item],
+.image#restaurantBrandCover {
+    border: solid var(--darker) 1px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
+}
+
+.image[item] {
+    cursor: pointer;
+}
+
+.image[item] img,
+img#restaurantBrand {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-secondary {
+    background-color: var(--bgcolor);
+    color: white;
+    border-color: var(--bgcolor);
+}
+
+.btn-secondary:hover {
+    background-color: var(--darker);
+    border-color: var(--darker);
+}
+
+.btn-secondary:active {
+    background-color: var(--evenDarker) !important;
+    border-color: var(--evenDarker) !important;
+    box-shadow: none !important;
+}
+
+.btn-secondary:focus {
+    box-shadow: none !important;
+}
+
+.btn-secondary:disabled {
+    background-color: var(--disabled) !important;
+    border: var(--disabled) !important;
+}
+
+.btn-outline-danger:focus {
+    box-shadow: none !important;
+}
+
+.list-group-item.active {
+    background-color: var(--bgcolor);
+    border-color: var(--bgcolor);
+}
+
+label.active::after {
+    content: '\00D7';
+    position: relative;
+    right: -6px;
+}
+
+.badge.bg-primary {
+    background-color: var(--bgcolor) !important;
+    border-color: var(--bgcolor) !important;
+}
+
+#Details i,
+.dropdown-menu i,
+.bi-clock,
+.bi-star,
+.bi-star-fill,
+.bi-three-dots-vertical,
+.bi-hand-thumbs-up,
+.bi-hand-thumbs-down,
+.bi-hand-thumbs-down-fill,
+.bi-hand-thumbs-up-fill,
+.bi-heart.addToFav,
+.bi-heart-fill.addToFav {
+    color: var(--bgcolor);
+}
+
+.selected {
+    animation: enlarge 250ms linear;
+}
+
+.overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.badge[tag].selected {
+    animation: tagSelection 150ms linear;
+}
+
+@keyframes tagSelection {
+    10% {
+        transform: scale(0.9);
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes enlarge {
+    10% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+a {
+    color: var(--bgcolor);
+}
+
+a:hover {
+    color: var(--evenDarker);
+}
+
+#Details,
+#Details a,
+#Details a:hover {
+    color: black;
+}
+
+#createComment input:focus,
+#edit:focus {
+    box-shadow: none !important;
+    border-color: var(--disabled) !important;
+}
+
+.editCommentBtn:focus {
+    box-shadow: none !important;
+}
+
+.editCommentBtn {
+    background-color: transparent;
+}
+
+.editCommentBtn i.bi {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.editCommentMenu {
+    position: absolute;
+    background: var(--bgcolor);
+    top: 0;
+    right: 100%;
+    z-index: 99;
+    opacity: 0;
+    transform: translateX(20%);
+    pointer-events: none;
+    transition: all 150ms ease-in-out;
+}
+
+.editCommentMenu.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    cursor: context-menu;
+}
+
+.editCommentMenu button.btn {
+    width: 100%;
+    text-align: start;
+}
+
+.darkShadow {
+    /* box-shadow: 0 0.5rem 1rem var(--darker); */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35) !important;
+}
+
+.failedH1::after {
+    content: ':(';
+    transform: rotate(90deg);
+    margin-left: 1.5rem;
+    white-space: nowrap;
+}
+
+.failedH1 {
+    display: flex;
+    align-items: center;
+}
+
+select:focus {
+    box-shadow: none !important;
+    border-color: var(--evenDarker) !important;
+}
+
+.likeList {
+    position: absolute;
+    overflow-y: scroll;
+    font-size: 0.8rem;
+    color: #fff;
+    left: 0;
+    top: 0;
+    transform: translateY(-60%);
+    background-color: var(--bgcolor);
+    padding: 0.5rem 1rem;
+    z-index: 99;
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+    pointer-events: none;
+}
+
+.likeList.active {
+    opacity: 1;
+    transform: translateY(-100%);
+    pointer-events: auto;
+    cursor: context-menu;
+}
+
+.likeList.noscroll::-webkit-scrollbar {
+    display: none;
+}
+
+.loadingDiv {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.loadingDiv div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid var(--bgcolor);
+    border-radius: 50%;
+    animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--bgcolor) transparent transparent transparent;
+}
+.loadingDiv div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.loadingDiv div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.loadingDiv div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+input#search {
+    border-color: white !important;
+}
+
+input#search:focus {
+    box-shadow: none !important;
+    border-color: white !important;
+}
+
+.loadingElements {
+    cursor: wait;
+    pointer-events: none;
+}

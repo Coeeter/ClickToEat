@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - ClickToEat</title>
+    <link rel="shortcut icon" href="images/favicon/Red Fork Restaurant Logo-modified.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" defer></script>
+    <script src="js/createUser.js" defer></script>
+</head>
+<body>
+    <iframe name="dummyframe"></iframe>
+
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <a href="/" class="navbar-brand" style="font-size: 1.5rem;"><img src="images/favicon/Red Fork Restaurant Logo-modified.png" alt="" style="width: 75px;"> ClickToEat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#links" aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="links">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Login" class="nav-link">Log in</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dummySpace"></div>
+
+    <div class="container">
+        
+        <div class="row shadow p-3 mb-5 bg-white rounded border py-5">        
+
+            <form class = "col-12" id = "dummyForm">
+                <div class="form-row">
+                    <div class="col-lg-9">
+                        <div class="form-group row">
+                            <label for="dummyUsername" class="col-form-label col-md-3">Username</label>
+                            <div class="col-md-9">
+                                <input type="text" name = "username" id = "dummyUsername" class="form-control" placeholder="Enter Username" required><br>
+                            </div>
+                        </div>
+            
+                        <div class="form-group row">
+                            <label for="dummyPassword" class="col-form-label col-md-3">Password</label>
+                            <div class="col-md-9">
+                                <input type="password" name="password" id="dummyPassword" class="form-control" placeholder="Enter Password" required><br>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="dummyPassword" class="col-form-label col-md-3">Confirm Password</label>
+                            <div class="col-md-9">
+                                <input type="password" name="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required><br>
+                            </div>
+                        </div>
+        
+                        <div class="form-group row">
+                            <label for="dummyEmail" class="col-form-label col-md-3">Email</label>
+                            <div class="col-md-9">
+                                <input type="email" name="email" id="dummyEmail" class="form-control" placeholder="Enter Email Address" required><br>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="dummyPhoneNum" class="col-form-label col-md-3">Phone Number</label>
+                            <div class="col-md-9">
+                                <input type="tel" name="phoneNum" id="dummyPhoneNum" class="form-control" placeholder="Enter Phone Number" required><br>        
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="dummyAddress" class="col-form-label col-md-3">Address</label>
+                            <div class="col-md-9">
+                                <input type="text" name="address" id="dummyAddress" class="form-control" placeholder="Enter Address" required><br>        
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="dummyFirstName" class="col-form-label col-md-3">First Name</label>
+                            <div class="col-md-9">
+                                <input type="text" name="firstName" id="dummyFirstName" class="form-control" placeholder="Enter First Name" required><br>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="dummyLastName" class="col-form-label col-md-3">Last Name</label>
+                            <div class="col-md-9">
+                                <input type="text" name="lastName" id="dummyLastName" class="form-control" placeholder = "Enter Last Name" required><br>
+                            </div>    
+                        </div>    
+                        
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <legend class="col-form-label col-md-3 pt-0">Gender</legend>
+                                <div class="col-md-9">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="dummyGender" id="dummyMale" value="M" checked>
+                                        <label class="form-check-label" for="dummyMale">Male</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="dummyGender" id="dummyFemale" value="F">
+                                        <label class="form-check-label" for="dummyFemale">Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label for="uploadFile" class="col-form-label col-12 text-md-center p-0">Profile Photo</label>
+                        <div class="d-flex justify-content-md-center">
+                            <label for="uploadFile">
+                                <img id = "output" width = "200" height = "200" src = "images/default-user.png">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dummySpace"></div>
+
+                <div class="form-row">
+                    <div class="col-md-9 d-flex justify-content-end">
+                        <div class="col-md-9 px-lg-1 px-md-5 px-sm-0 px-0">
+                            <button type="submit" class = "btn btn-secondary" onclick = "submitForm(event)">Upload</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form action="/users" method="POST" enctype="multipart/form-data" target = "dummyframe" id = "form" style="display:none">
+
+                <input type="text" name = "username" id = "username">
+    
+                <input type="password" name="password" id="password">
+
+                <input type="email" name="email" id="email">
+    
+                <input type="tel" name="phoneNum" id="phone">
+
+                <input type="text" name="address" id="address">
+
+                <input type="text" name="firstName" id="firstName">
+                <input type="text" name="lastName" id="lastName">
+
+                <input type="radio" name="gender" id="Male" value="M">
+                <input type="radio" name="gender" id="Female" value="F">
+    
+                <input type="file" name = "uploadFile" id = "uploadFile" accept="image/*" class = "form-control-file" onchange="loadFile(event)">
+
+                <button type="submit" class = "btn btn-secondary">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <!--The modal shown when finished updating user-->
+    <div class="modal fade" id="createUserModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title text-light" id = "createUserModalTitle"></h5>
+                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+              
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
