@@ -46,11 +46,12 @@ router.delete('/:token', async (request, respond) => {
     let token = request.params.token;
     try {
         let username = tokenModel.verify(token);
+        let id =
+            request.query && request.query.d == 'mobile' && request.query.id
+                ? request.query.id
+                : request.body.id;
         respond.json(
-            await likesOrDislikesDb.deleteLikesOrDislikes(
-                username,
-                request.body.id
-            )
+            await likesOrDislikesDb.deleteLikesOrDislikes(username, id)
         );
     } catch (error) {
         respond.json({ result: 'Invalid Token' });

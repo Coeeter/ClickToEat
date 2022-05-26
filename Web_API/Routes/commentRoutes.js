@@ -9,7 +9,14 @@ const commentDb = new CommentDb();
 //get all comments
 router.get('/', async (request, respond) => {
     try {
-        respond.json(await commentDb.getAllComments());
+        const commentList = await commentDb.getAllComments();
+        if (request.query && request.query.d == 'mobile') {
+            for (let i = 0; i < commentList.length; i++) {
+                let datePosted = new Date(commentList[i].datePosted)
+                commentList[i].datePosted = `${datePosted.toDateString()} ${datePosted.toLocaleTimeString()}`
+            }
+        }
+        respond.json(commentList);
     } catch (error) {
         respond.json(error);
     }

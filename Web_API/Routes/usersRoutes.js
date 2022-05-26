@@ -73,12 +73,12 @@ router.post('/', async (request, respond) => {
             let errorPoint = getErrorPoint(error.sqlMessage);
             if (code == 'ER_DUP_ENTRY') {
                 return respond.json({
-                    result: `${errorPoint} is already used by another user.\nPlease choose another ${errorPoint}.`
+                    result: `${errorPoint} is already used by another user. Please choose another ${errorPoint}.`
                 });
             }
             if (code == 'ER_DATA_TOO_LONG') {
                 return respond.json({
-                    result: `${errorPoint} is too long.\nPlease choose another ${errorPoint}.`
+                    result: `${errorPoint} is too long. Please choose another ${errorPoint}.`
                 });
             }
         }

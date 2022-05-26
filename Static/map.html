@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="shortcut icon" href="images/favicon/Red Fork Restaurant Logo-modified.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="/public/js/map.js" defer></script>
+    <script>
+        document.querySelector('script[src="/public/js/map.js"]').addEventListener('load', () => {
+            let script = document.createElement('script');
+            script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAHP4nsXPbOTuHVvfDykRPq9yIeMuyIbMI&callback=initMap"
+            script.async = true;
+            script.defer = true;
+            document.querySelector('head').appendChild(script);
+        });
+    </script>
+</head>
+<body>
+    <div id = "myMap" style="height: 100vh; width: 100vw"></div>
+</body>
+</html>

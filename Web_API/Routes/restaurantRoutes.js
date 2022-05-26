@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const RestaurantDb = require('../Model/RestaurantDb');
 const restaurantDb = new RestaurantDb();
+const path = require('path')
 
 //get Restaurant Data
 router.get('/', async (request, respond) => {
@@ -40,6 +41,12 @@ router.get('/', async (request, respond) => {
     } catch (error) {
         respond.json(error);
     }
+});
+
+router.get('/map', async (req, res) => {
+    if (!req.query || !req.query.r)
+        return res.json({ result: 'Invalid Request' });
+        res.sendFile(path.join(__dirname, '..', '..', 'Static', 'map.html'))
 });
 
 function cleanUpTag(tag) {
